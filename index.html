@@ -56,15 +56,15 @@
 <body>
   <div class="wrap">
     <h1>诉讼保全担保 2.0</h1>
-    <p class="sub">纯静态演示站点 · 无需 Node.js 后端<br />数据保存在浏览器 localStorage，投保端与机构端同域共享。</p>
+    <p class="sub">纯静态演示站点 · 可直接双击 HTML 打开<br />数据保存在浏览器 localStorage；HTTP 同域访问时投保端与机构端共享。</p>
 
     <div class="cards">
-      <a class="card" href="./user/index.html" target="_blank" rel="noopener noreferrer">
+      <a class="card" href="user/index.html">
         <strong>投保端（用户端）</strong>
         <span>材料上传 · AI 解析 · 确认提交 · 选机构</span>
         <span class="badge">user-portal</span>
       </a>
-      <a class="card" href="./insurance/index.html" target="_blank" rel="noopener noreferrer">
+      <a class="card" href="insurance/index.html">
         <strong>机构端（预审台）</strong>
         <span>登录 · 工作台 · 案件预审 · 出函</span>
         <span class="badge">insurance-portal</span>
@@ -72,9 +72,9 @@
     </div>
 
     <p class="note">
-      演示账号：手机号 <code>13800138000</code> · 密码 <code>123456</code><br />
-      机构 ID：<code>picc-hn</code>（人保湖南分公司）<br />
-      清除浏览器站点数据可重置全部 Mock 案件。
+      可直接双击本页或 <code>user/index.html</code>、<code>insurance/index.html</code> 打开。<br />
+      演示账号：手机号 <code>13800138000</code> · 密码 <code>123456</code> · 机构 <code>picc-hn</code><br />
+      双端联调数据共享：请用 <code>python3 -m http.server 8080</code> 或 GitHub Pages 等同域访问。
     </p>
   </div>
 </body>
