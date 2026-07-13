@@ -7,13 +7,67 @@
     <meta name="mobile-web-app-capable" content="yes" />
     <meta name="theme-color" content="#2563eb" />
     <title>诉讼保 · 用户端</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" />
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;600;700&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="./assets/style.css" />
+    <link rel="stylesheet" href="./assets/style.css?v=20260707-material-dedupe" />
   </head>
   <body>
-    <div id="root"></div>
-    <script defer src="./assets/app.js"></script>
+    <div id="root">
+      <div style="min-height:100vh;display:flex;align-items:center;justify-content:center;font:14px/1.6 -apple-system,BlinkMacSystemFont,'Noto Sans SC','Microsoft YaHei',sans-serif;color:#475569;background:#f8fafc;">
+        正在加载用户端原型...
+      </div>
+    </div>
+    <script>
+      (function () {
+        if (!window.location.hash) {
+          window.location.replace(window.location.href + '#/');
+        }
+
+        function escapeHtml(value) {
+          return String(value || '').replace(/[&<>"']/g, function (char) {
+            return {
+              '&': '&amp;',
+              '<': '&lt;',
+              '>': '&gt;',
+              '"': '&quot;',
+              "'": '&#39;'
+            }[char];
+          });
+        }
+
+        function renderError(message) {
+          var root = document.getElementById('root');
+          if (!root) return;
+          root.innerHTML = '<div style="min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px;font:14px/1.6 -apple-system,BlinkMacSystemFont,Arial,sans-serif;color:#b91c1c;background:#fef2f2;text-align:center;">用户端原型加载失败：' + escapeHtml(message || '请查看浏览器控制台') + '</div>';
+        }
+
+        window.__ssbRenderStaticError = renderError;
+
+        window.addEventListener('error', function (event) {
+          var target = event && event.target;
+          if (target && target !== window && target.tagName !== 'SCRIPT') {
+            return;
+          }
+          if (target && target.tagName === 'SCRIPT') {
+            renderError('脚本文件加载失败');
+            return;
+          }
+          renderError(event && event.message && event.message !== 'Script error.' ? event.message : '脚本执行异常');
+        });
+
+        window.addEventListener('unhandledrejection', function (event) {
+          var reason = event && event.reason;
+          renderError(reason && reason.message ? reason.message : '脚本执行异常');
+        });
+
+        window.setTimeout(function () {
+          var root = document.getElementById('root');
+          if (!root) return;
+          var text = (root.textContent || '').replace(/\s+/g, '');
+          if (text === '正在加载用户端原型...') {
+            renderError('页面挂载超时，请刷新页面或检查脚本是否被浏览器拦截');
+          }
+        }, 6000);
+      })();
+    </script>
+    <script defer src="./assets/app.js?v=20260707-material-dedupe" onerror="window.__ssbRenderStaticError && window.__ssbRenderStaticError('脚本文件加载失败')"></script>
   </body>
 </html>
