@@ -1471,6 +1471,269 @@ body{
   line-height:1.4!important;
 }
 
+#confirm-detail .diagnosis-todo{
+  gap:10px!important;
+}
+
+#confirm-detail .diagnosis-todo__head,
+#confirm-detail .diagnosis-party-group{
+  display:grid!important;
+  gap:10px!important;
+  margin:0!important;
+  padding:14px!important;
+  border:1px solid #e2e8f0!important;
+  border-radius:12px!important;
+  background:#fff!important;
+  box-shadow:0 1px 3px #0f172a0f,0 4px 16px #0f172a0a!important;
+}
+
+#confirm-detail .diagnosis-todo__head{
+  position:relative!important;
+  grid-template-columns:minmax(0,1fr) auto!important;
+  align-items:start!important;
+  gap:12px!important;
+}
+
+#confirm-detail .diagnosis-todo__head h2{
+  margin:0!important;
+  color:#252b36!important;
+  font-size:16px!important;
+  font-weight:700!important;
+  line-height:1.3!important;
+}
+
+#confirm-detail .diagnosis-todo__head p{
+  margin:4px 0 0!important;
+  color:#64748b!important;
+  font-size:12px!important;
+  line-height:1.45!important;
+}
+
+#confirm-detail .diagnosis-todo__head .diagnosis-overview__status{
+  position:static!important;
+}
+
+#confirm-detail .diagnosis-party-group__head{
+  display:flex!important;
+  align-items:center!important;
+  justify-content:space-between!important;
+  gap:10px!important;
+}
+
+#confirm-detail .diagnosis-party-group__head h3{
+  margin:0!important;
+  color:#252b36!important;
+  font-size:15px!important;
+  font-weight:700!important;
+  line-height:1.35!important;
+}
+
+#confirm-detail .diagnosis-party-group__head span{
+  color:#94a3b8!important;
+  font-size:12px!important;
+  line-height:1!important;
+  white-space:nowrap!important;
+}
+
+#confirm-detail .diagnosis-party-list{
+  display:grid!important;
+  gap:8px!important;
+  margin:0!important;
+  padding:0!important;
+  list-style:none!important;
+}
+
+#confirm-detail .diagnosis-compact-list{
+  display:grid!important;
+  gap:8px!important;
+  padding:0 14px!important;
+}
+
+#confirm-detail .diagnosis-compact-row{
+  display:grid!important;
+  grid-template-columns:minmax(0,46%) minmax(0,1fr)!important;
+  min-height:48px!important;
+  align-items:center!important;
+  gap:10px!important;
+  border:1px solid #e7edf6!important;
+  border-radius:8px!important;
+  background:#fff!important;
+  padding:10px 12px!important;
+  color:#303642!important;
+  font-size:14px!important;
+  line-height:1.5!important;
+}
+
+#confirm-detail .diagnosis-compact-row>strong{
+  min-width:0!important;
+  font-size:14px!important;
+  font-weight:750!important;
+  overflow-wrap:anywhere!important;
+}
+
+#confirm-detail .diagnosis-compact-colon{
+  display:none!important;
+}
+
+#confirm-detail .diagnosis-compact-items{
+  display:grid!important;
+  min-width:0!important;
+  width:100%!important;
+  gap:6px!important;
+}
+
+#confirm-detail .diagnosis-compact-item{
+  display:flex!important;
+  width:100%!important;
+  min-width:0!important;
+  min-height:26px!important;
+  align-items:center!important;
+  justify-content:space-between!important;
+  gap:8px!important;
+  border:0!important;
+  border-radius:6px!important;
+  background:#f8fafc!important;
+  padding:3px 6px!important;
+  color:#303642!important;
+  font-size:13px!important;
+  line-height:1.4!important;
+  text-align:left!important;
+  cursor:pointer!important;
+}
+
+#confirm-detail .diagnosis-compact-item>span:first-child{
+  min-width:0!important;
+  flex:1 1 auto!important;
+  overflow-wrap:anywhere!important;
+}
+
+#confirm-detail .diagnosis-compact-item>.lc-tag{
+  flex:0 0 auto!important;
+  white-space:nowrap!important;
+}
+
+#confirm-detail .diagnosis-compact-item:active{
+  background:#eef2ff!important;
+}
+
+
+#confirm-detail .diagnosis-party-card{
+  display:grid!important;
+  gap:8px!important;
+  border:1px solid #e5ebf5!important;
+  border-radius:12px!important;
+  background:#fff!important;
+  padding:11px 12px!important;
+}
+
+#confirm-detail .diagnosis-party-card--ok{
+  display:flex!important;
+  min-height:44px!important;
+  align-items:center!important;
+  gap:9px!important;
+  color:#475569!important;
+}
+
+#confirm-detail .diagnosis-party-card--warn{
+  border-color:#fed7aa!important;
+  background:#fffaf5!important;
+}
+
+#confirm-detail .diagnosis-party-card__title{
+  display:flex!important;
+  align-items:center!important;
+  gap:8px!important;
+  min-width:0!important;
+}
+
+#confirm-detail .diagnosis-party-card__mark{
+  display:inline-flex!important;
+  width:20px!important;
+  height:20px!important;
+  flex:0 0 auto!important;
+  align-items:center!important;
+  justify-content:center!important;
+  border-radius:999px!important;
+  background:#fff7e8!important;
+  color:#f59e0b!important;
+  font-size:12px!important;
+  font-weight:800!important;
+  line-height:1!important;
+}
+
+#confirm-detail .diagnosis-party-card--ok .diagnosis-party-card__mark{
+  background:#ecfdf5!important;
+  color:#10b981!important;
+}
+
+#confirm-detail .diagnosis-party-card strong{
+  min-width:0!important;
+  color:#252b36!important;
+  font-size:14px!important;
+  font-weight:700!important;
+  line-height:1.35!important;
+  overflow-wrap:anywhere!important;
+}
+
+#confirm-detail .diagnosis-party-card__label{
+  margin:0!important;
+  color:#64748b!important;
+  font-size:12px!important;
+  font-weight:600!important;
+}
+
+#confirm-detail .diagnosis-party-todos{
+  display:grid!important;
+  gap:7px!important;
+  margin:0!important;
+  padding:0!important;
+  list-style:none!important;
+}
+
+#confirm-detail .diagnosis-party-todos li{
+  display:grid!important;
+  grid-template-columns:minmax(0,1fr) auto!important;
+  align-items:center!important;
+  gap:10px!important;
+  border-radius:10px!important;
+  background:#fff!important;
+  padding:9px 10px!important;
+}
+
+#confirm-detail .diagnosis-party-todos span{
+  display:block!important;
+  color:#252b36!important;
+  font-size:13px!important;
+  font-weight:650!important;
+  line-height:1.35!important;
+}
+
+#confirm-detail .diagnosis-party-todos span:before{
+  content:"•";
+  margin-right:6px!important;
+  color:#f59e0b!important;
+}
+
+#confirm-detail .diagnosis-party-todos p{
+  margin:3px 0 0!important;
+  color:#64748b!important;
+  font-size:11px!important;
+  line-height:1.45!important;
+}
+
+#confirm-detail .diagnosis-party-todos button{
+  min-height:32px!important;
+  border:1px solid #bfdbfe!important;
+  border-radius:9px!important;
+  background:#eff6ff!important;
+  padding:0 10px!important;
+  color:#2563eb!important;
+  font-size:12px!important;
+  font-weight:700!important;
+  white-space:nowrap!important;
+  cursor:pointer!important;
+}
+
 .diagnosis-cta-row{
   position:fixed!important;
   left:50%!important;
@@ -1953,10 +2216,6 @@ body{
 
 .lc-confirm-case-page.lc-case-editing .lc-case-info-section .lc-subsection-title-row{
   min-height:46px!important;
-}
-
-.lc-confirm-case-page.lc-case-editing .lc-subsection-title-row button.rounded{
-  display:none!important;
 }
 
 .lc-confirm-case-page.lc-case-editing .lc-info-row{
