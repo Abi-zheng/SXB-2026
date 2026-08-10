@@ -4081,3 +4081,48 @@ body{
   color:#b4becb!important;
   transform:rotate(-90deg)!important;
 }
+
+.lc-confirm-case-page .lc-quick-add-party{
+  display:flex!important;
+  width:100%!important;
+  min-height:40px!important;
+  align-items:center!important;
+  justify-content:space-between!important;
+  gap:10px!important;
+  margin:6px 0 2px!important;
+  padding:8px 10px!important;
+  border:1px dashed #cbd8ea!important;
+  border-radius:10px!important;
+  background:#fbfdff!important;
+  color:#335f9f!important;
+  font-size:13px!important;
+  font-weight:650!important;
+  line-height:1.3!important;
+  text-align:left!important;
+}
+
+.lc-confirm-case-page .lc-quick-add-party b{
+  display:flex!important;
+  width:18px!important;
+  height:18px!important;
+  align-items:center!important;
+  justify-content:center!important;
+  border-radius:999px!important;
+  background:#eef5ff!important;
+  color:#2563eb!important;
+  font-size:15px!important;
+  font-weight:750!important;
+  line-height:1!important;
+}
+
+.lc-confirm-case-page .lc-quick-field--readonly{
+  cursor:default!important;
+}
+
+.lc-confirm-case-page .lc-quick-field--readonly:active{
+  background:#fff!important;
+}
+
+.lc-confirm-case-page .lc-quick-field--readonly .lc-quick-field__value{
+  color:#334155!important;
+}
