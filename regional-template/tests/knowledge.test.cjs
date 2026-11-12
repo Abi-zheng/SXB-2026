@@ -1,0 +1,11 @@
+const test=require('node:test'),assert=require('node:assert/strict'),fs=require('node:fs'),vm=require('node:vm');const {answer}=require('../dist/knowledge.js');const c={window:{}};for(const f of ['content','journey'])vm.runInNewContext(fs.readFileSync('dist/'+f+'.js','utf8'),c);const site=c.window.SITE_CONFIG,j=c.window.COURT_JOURNEY,ask=q=>answer(q,site,j);
+test('platform accurately limits service to information',()=>assert.match(ask('诉讼保可以提供哪些服务？').answer,/不在本站受理/));
+test('generic guarantee materials never return financing materials',()=>{const r=ask('保函需要准备哪些材料？');assert.match(r.answer,/案件阶段/);assert.doesNotMatch(r.answer,/融资用途/)});
+test('specific service uses its own preparation checklist',()=>{const r=ask('先予执行需要哪些材料？');assert.match(r.answer,/紧急需求/);assert.ok(r.sources.some(x=>x.url.includes('advance-enforcement')))});
+test('appeal expiry question links to the matching stage',()=>assert.ok(ask('我的案件已经二审，保函到期怎么办？').sources.some(x=>x.url==='/scenarios?stage=appeal')));
+test('release synonyms reach the same service',()=>{for(const q of ['解封是什么','解除保全是什么','反担保是什么'])assert.ok(ask(q).sources.some(x=>x.url.includes('release-preservation')))});
+test('individual court acceptance is not answered as an approval',()=>{const r=ask('法院会接受这份财产保全保函吗？');assert.match(r.answer,/不能仅凭提问/)});
+test('institution status is not confused with application intent',()=>{assert.match(ask('机构是否已经入驻？').answer,/已上线/);assert.match(ask('如何申请机构入驻？').answer,/模拟提交|演示提交/)});
+test('no invented contact or AI access',()=>{assert.match(ask('客服电话是多少？').answer,/暂未开放/);assert.match(ask('你是AI吗').answer,/尚未连接外部 AI 模型/)});
+test('all service links and stage destinations exist',()=>{for(const s of site.scenarios)assert.ok(ask(s.title+'是什么？').sources.some(x=>x.url==='/scenarios/'+s.id));for(const stage of j.stages)for(const n of stage.needs)assert.ok(site.scenarios.some(s=>s.id===n.service))});
+test('unknown questions do not invent facts',()=>assert.match(ask('明天天气怎么样').answer,/暂未找到/));
